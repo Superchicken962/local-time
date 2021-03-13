@@ -1,0 +1,12 @@
+.todaydate {
+    text-align: center;
+    font-size: 45px;
+}
+
+#showdate {
+    color: blue;
+}
+
+#showtime {
+    color: blue;
+}
