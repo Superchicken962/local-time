@@ -16,28 +16,72 @@ var getdate = new Date();
 var fulldate = getdate.getDate()+'/'+(getdate.getMonth()+1)+'/'+getdate.getFullYear();
 document.getElementById("showdate").innerHTML = fulldate;
 
-// checking hour to set to AM or PM
-var checkhour = new Date();
-var hour = checkhour.getHours();
-var amorpm
-if (hour <= 12) {
-    amorpm = " AM";
-} else {
-    amorpm = " PM";
-}
-
-// finding the time and timezone
+// finding the time and timezone in 24 hr time
 var findtimeinterval = setInterval("findtime()", 1000);
 
 function findtime() {
 var gettime = new Date();
 var timezone = gettime.getTimezoneOffset();
-var time = gettime.getHours()+':'+gettime.getMinutes()+':'+gettime.getSeconds()+amorpm
+var time = gettime.getHours()+':'+gettime.getMinutes()+':'+gettime.getSeconds();
 document.getElementById("showtime").innerHTML = time;
 document.getElementById("timezone").innerHTML = timezone;
 }
 
-//
+// checking hour to set to AM or PM
+var check12hour = new Date();
+var t12hours = check12hour.getHours();
+var amorpm
+if (t12hours <= 12) {
+    amorpm = " AM";
+} else {
+    amorpm = " PM";
+}
+
+// time in 12 hr time
+var findtimeinterval12 = setInterval("findtime12()", 1000);
+
+function findtime12() {
+    var gettime12 = new Date();
+    var t12hours = gettime12.getHours();
+    var t12minutes = gettime12.getMinutes();
+    var t12seconds = gettime12.getSeconds();
+    t12hours = t12hours % 12;
+    t12hours = t12hours ? t12hours : 12;
+    t12minutes = t12minutes < 10 ? '0'+t12minutes : t12minutes;
+    var twelvehourtime = t12hours+':'+t12minutes+':'+t12seconds+amorpm;
+    document.getElementById("12hourtime").innerHTML = twelvehourtime;
+}
+// toggling 24 / 12 hour time
+function toggle12or24() {
+    var twselect = document.getElementById("twelvehourselect");
+    var twenselect = document.getElementById("twentyfourhourselect");
+    var twelvehr = document.getElementById("twelvehourtext");
+    var twentyfourhr = document.getElementById("twentyfourhourtext")
+    if (twelvehr.style.display === "none") {
+        twelvehr.style.display = "block";
+        twentyfourhr.style.display = "none";
+        twselect.style.display = "block";
+        twenselect.style.display = "none";
+    } else {
+        twelvehr.style.display = "none";
+        twentyfourhr.style.display = "block";
+        twselect.style.display = "none";
+        twenselect.style.display = "block";
+    }
+}
+
+function choosecolour() {
+    var input = document.getElementById("userinput").value;
+    document.getElementById("showdate").style.color = input;
+    document.getElementById("twentyfourhourtext").style.color = input;
+    document.getElementById("twelvehourtext").style.color = input;
+    document.getElementById("twelveselectedtext").style.color = input;
+    document.getElementById("twentyfourselectedtext").style.color = input;
+    document.getElementById("timezone").style.color = input;
+}
+
+// finding closest public holiday
+/**
 function australia() {
 
 }
@@ -45,3 +89,4 @@ function australia() {
 function southaustralia() {
     
 }
+*/

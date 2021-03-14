@@ -3,10 +3,68 @@
     font-size: 45px;
 }
 
-#showdate {
-    color: blue;
+.currentselect {
+    text-align: center;
+    font-size: 25px;
 }
 
-#showtime {
-    color: blue;
+.togglebutton {
+    padding: 25px;
+    background-color: black;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 167px;
+    text-decoration: none;
+}
+
+.togglebutton:hover {
+    opacity: 0.6;
+}
+
+.togglebutton:active {
+    padding: 20px;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+#twelveselectedtext {
+    color: blueviolet;
+}
+
+#twentyfourselectedtext {
+    color: blueviolet;
+}
+
+#showdate {
+    color: blueviolet;
+}
+
+#twentyfourtext {
+    color: blueviolet;
+}
+
+#twentyfourhourtext {
+    color: blueviolet;
+}
+
+#twelvehourtext {
+    color: blueviolet;
+}
+
+#timezone {
+    color: blueviolet;
+}
+
+.colourchangebox {
+    padding: 12px;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+}
+
+.textcenter {
+    text-align: center;
 }

@@ -4,11 +4,18 @@
 <link rel="icon" href="">
 <title>local time</title>
 </head>
-<body onload="findtime()">
+<body onload="findtime(), findtime12(), toggle12or24()">
 <h1 class="todaydate">Your Local Timezone Date & Time</h1>
-<h1 class="todaydate"><span id="showdate">N/A</span></h1>
-<h1 class="todaydate"><span id="showtime">00:00:00</span></h1>
-<h1 class="todaydate">Timezone Offset: <span id="timezone">N/A</span></h1>
+<h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
+<h1 class="todaydate" id="twentyfourhourtext"><span class="changetext" id="showtime">00:00:00</span></h1>
+<h1 class="todaydate" id="twelvehourtext"><span class="changetext" id="12hourtime">00:00:00</span></h1>
+<h1 class="currentselect" id="twelvehourselect">Currently Selected: <span id="twelveselectedtext">12 Hour Time</span></h1>
+<h1 class="currentselect" id="twentyfourhourselect">Currently Selected: <span id="twentyfourselectedtext">24 Hour Time</span></h1>
+<a class="togglebutton" onclick="toggle12or24()">Toggle 24 / 12 Hour Time</a>
+<h1 class="todaydate">Timezone Offset: <span class="changetext" id="timezone">N/A</span></h1>
+<br>
+<input class="colourchangebox" id="userinput" onkeyup="choosecolour()">
+<h2 class="textcenter">Change text colour above<br>(type in colour names or hex numbers)</h2>
 </body>
 <script src="script.js"></script>
 </html>
