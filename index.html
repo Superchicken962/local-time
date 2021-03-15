@@ -4,7 +4,7 @@
 <link rel="icon" href="">
 <title>local time</title>
 </head>
-<body onload="findtime(), findtime12(), toggle12or24()">
+<body onload="finddate(), findtime(), findtime12(), toggle12or24()">
 <h1 class="todaydate">Your Local Timezone Date & Time</h1>
 <h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
 <h1 class="todaydate" id="twentyfourhourtext"><span class="changetext" id="showtime">00:00:00</span></h1>
@@ -16,6 +16,8 @@
 <br>
 <input class="colourchangebox" id="userinput" onkeyup="choosecolour()">
 <h2 class="textcenter">Change text colour above<br>(type in colour names or hex numbers)</h2>
+<br><br><br><br>
+<a class="viewbugs" onclick="viewbugs()">View Bugs</a>
 </body>
 <script src="script.js"></script>
 </html>

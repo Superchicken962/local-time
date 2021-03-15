@@ -68,3 +68,20 @@ body {
 .textcenter {
     text-align: center;
 }
+
+.viewbugs {
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding: 10px;
+    background-color: lightgrey;
+    width: 80px;
+}
+
+.viewbugs:hover {
+    opacity: 0.7;
+}
+
+.viewbugs:active {
+    padding: 8px;
+}

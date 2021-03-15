@@ -12,9 +12,13 @@ var bd = 28/12/2021 // boxing day
 var acd = 8/03/2021 // adelaide cup day
 
 // finding the date
+var finddateinterval = setInterval("finddate()", 1000);
+
+function finddate() {
 var getdate = new Date();
 var fulldate = getdate.getDate()+'/'+(getdate.getMonth()+1)+'/'+getdate.getFullYear();
 document.getElementById("showdate").innerHTML = fulldate;
+}
 
 // finding the time and timezone in 24 hr time
 var findtimeinterval = setInterval("findtime()", 1000);
@@ -78,6 +82,10 @@ function choosecolour() {
     document.getElementById("twelveselectedtext").style.color = input;
     document.getElementById("twentyfourselectedtext").style.color = input;
     document.getElementById("timezone").style.color = input;
+}
+
+function viewbugs() {
+alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
 }
 
 // finding closest public holiday
