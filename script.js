@@ -33,9 +33,9 @@ document.getElementById("timezone").innerHTML = timezone;
 
 // checking hour to set to AM or PM
 var check12hour = new Date();
-var t12hours = check12hour.getHours();
+var t12hours = check12hour.getHours()+''+check12hour.getMinutes();
 var amorpm
-if (t12hours <= 12) {
+if (t12hours <= 1159) {
     amorpm = " AM";
 } else {
     amorpm = " PM";
@@ -84,16 +84,24 @@ function choosecolour() {
     document.getElementById("timezone").style.color = input;
 }
 
+function choosecolourpicker() {
+    var inputpicker = document.getElementById("userinputpicker").value;
+    document.getElementById("showdate").style.color = inputpicker;
+    document.getElementById("twentyfourhourtext").style.color = inputpicker;
+    document.getElementById("twelvehourtext").style.color = inputpicker;
+    document.getElementById("twelveselectedtext").style.color = inputpicker;
+    document.getElementById("twentyfourselectedtext").style.color = inputpicker;
+    document.getElementById("timezone").style.color = inputpicker;
+}
+
 function viewbugs() {
-alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
+alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed - Should be fixed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
 }
 
 // finding closest public holiday
 /**
 function australia() {
-
 }
-
 function southaustralia() {
     
 }
