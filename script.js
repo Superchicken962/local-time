@@ -95,7 +95,7 @@ function choosecolourpicker() {
 }
 
 function viewbugs() {
-alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed - Should be fixed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
+alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
 }
 
 // finding closest public holiday
