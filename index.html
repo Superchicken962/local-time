@@ -15,11 +15,25 @@
 <h1 class="todaydate">Timezone Offset: <span class="changetext" id="timezone">N/A</span></h1>
 <br>
 <input class="colourchangeboxpicker" id="userinputpicker" type="color" oninput="choosecolourpicker()">
-<input class="colourchangebox" id="userinput" onkeyup="choosecolour()">
+<input class="colourchangebox" id="userinput" onkeyup="choosecolour()" placeholder="Hex Value or Colour Name">
 <h1></h1>
 <h2 class="textcenter">Choose colour above<br>(choose a colour from the picker, or type the hex colour or name in the box)</h2>
-<br><br><br><br>
+<br><br>
+<h2 class="textcenter">Countdown until entered date below</h2>
+<input class="entercountdownbox" placeholder="DD" id="countdowninput-day">
+<input class="entercountdownbox" placeholder="MM" id="countdowninput-month">
+<input class="entercountdownbox" placeholder="YYYY" id="countdowninput-year">
+<input class="entercountdownbutton" type="submit" id="countdowninput" onclick="countdownsubmit()">
+<h3 class="textcenter" id="displayinput1"></h3>
+<h3 class="textcenter" id="displaydate"></h3>
+<br><br>
 <a class="viewbugs" onclick="viewbugs()">View Bugs</a>
 </body>
 <script src="script.js"></script>
+<script src="maintenance.js"></script>
+<script>
+    if (maintenance == 1) {
+        window.location.replace("maintenance.html");
+    } 
+</script>
 </html>

@@ -76,6 +76,11 @@ function toggle12or24() {
 
 function choosecolour() {
     var input = document.getElementById("userinput").value;
+    if (input == "elephant") {
+        input = "grey";
+    } else if (input == "tiger") {
+        input = "orange";
+    }
     document.getElementById("showdate").style.color = input;
     document.getElementById("twentyfourhourtext").style.color = input;
     document.getElementById("twelvehourtext").style.color = input;
@@ -94,8 +99,31 @@ function choosecolourpicker() {
     document.getElementById("timezone").style.color = inputpicker;
 }
 
+var countdownsubmitinterval = setInterval("countdownsubmit()", 1000);
+
+function countdownsubmit() {
+    var cinputday = document.getElementById("countdowninput-day").value;
+    var cinputmonth = document.getElementById("countdowninput-month").value;
+    var cinputyear = document.getElementById("countdowninput-year").value;
+    var d = new Date();
+    var day = d.getDate();
+    var month = (d.getMonth()+1);
+    var year = d.getFullYear();
+    var dayleft = cinputday - day;
+    if (day >= cinputday) {
+        dayleft += 31;
+    }
+    var monthleft = cinputmonth - month;
+    if (month >= cinputmonth) {
+        monthleft += 13;
+    }
+    var yearleft = cinputyear - year;
+    var dateleft = dayleft+' Day(s), '+monthleft+' Month(s), '+yearleft+' Year(s) Left';
+    document.getElementById("displaydate").innerHTML = dateleft;
+}
+
 function viewbugs() {
-alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
+alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed - Should be fixed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
 }
 
 // finding closest public holiday
