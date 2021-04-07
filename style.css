@@ -111,3 +111,24 @@ body {
     margin: auto;
     display: block;
 }
+
+#override-password {
+    margin: auto;
+    display: block;
+    padding: 8px;
+    width: 200px;
+    text-align: center;
+}
+
+.override-buttoninput {
+        margin: auto;
+    display: block;
+    padding: 8px;
+    width: 200px;
+}
+
+#incorrect-password {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="">
+<title>local time</title>
+</head>
+<body onload="finddate(), findtime(), findtime12(), toggle12or24()">
+<div id="maintenance-div">
+<h1 class="todaydate">Website Under Maintenance</h1>
+<img class="centerimg" src="engineer website maintenance.gif">
+<br>
+<h2 class="textcenter">Override Maintenance Block</h2>
+<h3 id="incorrect-password">Incorrect Password</h3>
+<form id="form" onsubmit="return false;"><input id="override-password" onkeyup="hideincorrectmsg()" placeholder="Password to Override" autocomplete="off"><br><button class="override-buttoninput" type="submit" onclick="overridepassword()">Submit</button>
+<br>
+</div>
+<div id="websiteblock">
+<h1 class="todaydate">Your Local Timezone Date & Time</h1>
+<h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
+<h1 class="todaydate" id="twentyfourhourtext"><span class="changetext" id="showtime">00:00:00</span></h1>
+<h1 class="todaydate" id="twelvehourtext"><span class="changetext" id="12hourtime">00:00:00</span></h1>
+<h1 class="currentselect" id="twelvehourselect">Currently Selected: <span id="twelveselectedtext">12 Hour Time</span></h1>
+<h1 class="currentselect" id="twentyfourhourselect">Currently Selected: <span id="twentyfourselectedtext">24 Hour Time</span></h1>
+<a class="togglebutton" onclick="toggle12or24()">Toggle 24 / 12 Hour Time</a>
+<h1 class="todaydate">Timezone Offset: <span class="changetext" id="timezone">N/A</span></h1>
+<br>
+<input class="colourchangeboxpicker" id="userinputpicker" type="color" oninput="choosecolourpicker()">
+<input class="colourchangebox" id="userinput" onkeyup="choosecolour()" placeholder="Hex Value or Colour Name">
+<h1></h1>
+<h2 class="textcenter">Choose colour above<br>(choose a colour from the picker, or type the hex colour or name in the box)</h2>
+<br><br>
+<h2 class="textcenter">Countdown until entered date below</h2>
+<input class="entercountdownbox" placeholder="DD" id="countdowninput-day">
+<input class="entercountdownbox" placeholder="MM" id="countdowninput-month">
+<input class="entercountdownbox" placeholder="YYYY" id="countdowninput-year">
+<input class="entercountdownbutton" type="submit" id="countdowninput" onclick="countdownsubmit()">
+<h3 class="textcenter" id="displayinput1"></h3>
+<h3 class="textcenter" id="displaydate"></h3>
+<br><br>
+<a class="viewbugs" onclick="viewbugs()">View Bugs</a>
+</div>
+</body>
+<script src="script.js"></script>
+<script src="maintenance.js"></script>
+<script>
+    var maintenancediv = document.getElementById("maintenance-div");
+    var incorrectmsg = document.getElementById("incorrect-password");
+    const password = "jjd"
+    var websitenormal = document.getElementById("websiteblock");
+    maintenancediv.style.display = "none";
+    incorrectmsg.style.display = "none";
+    if (maintenance == 1) {
+        maintenancediv.style.display = "block";
+        websitenormal.style.display = "none";
+    }  else if (maintenance == 0) {
+        maintenancediv.style.display = "none";
+        websitenormal.style.display = "block";   
+    }
+    function overridepassword() {
+        var enteredinput = document.getElementById("override-password").value;
+        if (enteredinput == password) {
+            maintenancediv.style.display = "none";
+            websitenormal.style.display = "block";  
+        } else {
+            incorrectmsg.style.display = "block";
+        }
+    }
+    function hideincorrectmsg() {
+        incorrectmsg.style.display = "none";
+    }
+</script>
+</html>
