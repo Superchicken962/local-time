@@ -132,3 +132,19 @@ body {
     font-size: 16px;
     text-align: center;
 }
+
+.lightsbutton {
+    margin: auto;
+    display: block;
+    width: 125px;
+    padding: 18px;
+}
+
+.lightsbutton:hover {
+    opacity: 0.7;
+}
+
+.lightsbutton:active {
+    padding: 16px;
+    width: 110px;
+}

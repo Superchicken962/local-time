@@ -4,12 +4,14 @@
 <link rel="icon" href="">
 <title>local time</title>
 </head>
+<div id="page">
 <body onload="finddate(), findtime(), findtime12(), toggle12or24()">
 <div id="maintenance-div">
-<h1 class="todaydate">Website Under Maintenance</h1>
-<img class="centerimg" src="engineer website maintenance.gif">
+<h1 class="todaydate maintenancetext">Website Under Maintenance</h1>
+<img id="maintenancegif" class="centerimg" src="engineer website maintenance.gif">
+<img id="maintenancegifgrey" class="centerimg" src="engineer website maintenance grey-bg.gif">
 <br>
-<h2 class="textcenter">Override Maintenance Block</h2>
+<h2 class="textcenter maintenancetext">Override Maintenance Block</h2>
 <h3 id="incorrect-password">Incorrect Password</h3>
 <form id="form" onsubmit="return false;"><input id="override-password" onkeyup="hideincorrectmsg()" placeholder="Password to Override" autocomplete="off"><br><button class="override-buttoninput" type="submit" onclick="overridepassword()">Submit</button>
 <br>
@@ -39,10 +41,15 @@
 <br><br>
 <a class="viewbugs" onclick="viewbugs()">View Bugs</a>
 </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<button id="maintenancelightbutton" class="lightsbutton" onclick="maintenance_changelighting()">Lights Off</button>
 </body>
+<script src="lightingmode.js"></script>
 <script src="script.js"></script>
-<script src="maintenance.js"></script>
+<script src="variables.js"></script>
 <script>
+    var maintenancelbutton = document.getElementById("maintenancelightbutton");
     var maintenancediv = document.getElementById("maintenance-div");
     var incorrectmsg = document.getElementById("incorrect-password");
     const password = "jjd"
@@ -52,7 +59,9 @@
     if (maintenance == 1) {
         maintenancediv.style.display = "block";
         websitenormal.style.display = "none";
+        maintenancelbutton.style.display = "block";
     }  else if (maintenance == 0) {
+        maintenancelbutton.style.display = "none";
         maintenancediv.style.display = "none";
         websitenormal.style.display = "block";   
     }
