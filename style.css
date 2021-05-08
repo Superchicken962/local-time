@@ -148,3 +148,39 @@ body {
     padding: 16px;
     width: 110px;
 }
+
+#topbar {
+    width: vw;
+    height: 80px;
+    background-color: rgb(87, 189, 67);
+}
+
+#topbar-item {
+    text-decoration: none;
+    padding: 26px;
+    background-color: rgb(87, 189, 67);
+    float: left;
+    font-family: fantasy;
+    color: black;
+    font-size: 23px;
+}
+
+#topbar-item-active {
+    text-decoration: none;
+    padding: 26px;
+    background-color: rgb(202, 200, 55);
+    float: left;
+    font-family: fantasy;
+    color: black;
+    font-size: 23px;
+}
+
+#topbar-item:hover {
+    background: darkgray;
+    opacity: 0.7;
+}
+
+#topbar-item-active:hover {
+    background: darkgray;
+    opacity: 0.7;
+}

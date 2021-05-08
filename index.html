@@ -17,7 +17,11 @@
 <br>
 </div>
 <div id="websiteblock">
-<h1 class="todaydate">Your Local Timezone Date & Time</h1>
+<div id="topbar">
+    <a id="topbar-item-active" href="index.html">Home</a>
+    <a id="topbar-item" href="countdown.html">Countdown</a>
+</div>
+<h1 class="todaydate">Timezones</h1>
 <h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
 <h1 class="todaydate" id="twentyfourhourtext"><span class="changetext" id="showtime">00:00:00</span></h1>
 <h1 class="todaydate" id="twelvehourtext"><span class="changetext" id="12hourtime">00:00:00</span></h1>
@@ -30,14 +34,6 @@
 <input class="colourchangebox" id="userinput" onkeyup="choosecolour()" placeholder="Hex Value or Colour Name">
 <h1></h1>
 <h2 class="textcenter">Choose colour above<br>(choose a colour from the picker, or type the hex colour or name in the box)</h2>
-<br><br>
-<h2 class="textcenter">Countdown until entered date below</h2>
-<input class="entercountdownbox" placeholder="DD" id="countdowninput-day">
-<input class="entercountdownbox" placeholder="MM" id="countdowninput-month">
-<input class="entercountdownbox" placeholder="YYYY" id="countdowninput-year">
-<input class="entercountdownbutton" type="submit" id="countdowninput" onclick="countdownsubmit()">
-<h3 class="textcenter" id="displayinput1"></h3>
-<h3 class="textcenter" id="displaydate"></h3>
 <br><br>
 <a class="viewbugs" onclick="viewbugs()">View Bugs</a>
 </div>
