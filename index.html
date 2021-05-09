@@ -13,22 +13,23 @@
 <br>
 <h2 class="textcenter maintenancetext">Override Maintenance Block</h2>
 <h3 id="incorrect-password">Incorrect Password</h3>
-<form id="form" onsubmit="return false;"><input id="override-password" onkeyup="hideincorrectmsg()" placeholder="Password to Override" autocomplete="off"><br><button class="override-buttoninput" type="submit" onclick="overridepassword()">Submit</button>
+<form id="form" onsubmit="return false;"><input id="override-password" onkeyup="hideincorrectmsg()" placeholder="Password to Override" autocomplete="off"><br><button class="override-buttoninput" type="submit" onclick="overridepassword()">Submit</button></form>
 <br>
 </div>
 <div id="websiteblock">
 <div id="topbar">
-    <a id="topbar-item-active" href="index.html">Home</a>
+    <a id="topbar-item-active" href="index.html">Local Time</a>
+    <a id="topbar-item" href="utc.html">Timezones</a>
     <a id="topbar-item" href="countdown.html">Countdown</a>
 </div>
 <h1 class="todaydate">Timezones</h1>
 <h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
 <h1 class="todaydate" id="twentyfourhourtext"><span class="changetext" id="showtime">00:00:00</span></h1>
 <h1 class="todaydate" id="twelvehourtext"><span class="changetext" id="12hourtime">00:00:00</span></h1>
+<h3 id="chosentz" class="centertext"></h3>
 <h1 class="currentselect" id="twelvehourselect">Currently Selected: <span id="twelveselectedtext">12 Hour Time</span></h1>
 <h1 class="currentselect" id="twentyfourhourselect">Currently Selected: <span id="twentyfourselectedtext">24 Hour Time</span></h1>
 <a class="togglebutton" onclick="toggle12or24()">Toggle 24 / 12 Hour Time</a>
-<h1 class="todaydate">Timezone Offset: <span class="changetext" id="timezone">N/A</span></h1>
 <br>
 <input class="colourchangeboxpicker" id="userinputpicker" type="color" oninput="choosecolourpicker()">
 <input class="colourchangebox" id="userinput" onkeyup="choosecolour()" placeholder="Hex Value or Colour Name">

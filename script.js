@@ -1,15 +1,15 @@
 //setting public holidays
 //national holidays
-var nyd = 1/01/2021 // new year's day
-var ad = 26/01/2021 // australia day
-var gf = 2/04/2021 // good friday
-var hs = 3/04/2021 // holy saturday
-var em = 5/04/2021 // easter monday
-var azd = 25/04/2021 // anzac day
-var cd = 27/12/2021 // christmas day
-var bd = 28/12/2021 // boxing day
+var nyd = "1/01/2021" // new year's day
+var ad = "26/01/2021" // australia day
+var gf = "2/04/2021" // good friday
+var hs = "3/04/2021" // holy saturday
+var em = "5/04/2021" // easter monday
+var azd = "25/04/2021" // anzac day
+var cd = "27/12/2021" // christmas day
+var bd = "28/12/2021" // boxing day
 //south australia
-var acd = 8/03/2021 // adelaide cup day
+var acd = "8/03/2021" // adelaide cup day
 
 // finding the date
 var finddateinterval = setInterval("finddate()", 1000);
@@ -25,10 +25,8 @@ var findtimeinterval = setInterval("findtime()", 1000);
 
 function findtime() {
 var gettime = new Date();
-var timezone = gettime.getTimezoneOffset();
 var time = gettime.getHours()+':'+gettime.getMinutes()+':'+gettime.getSeconds();
 document.getElementById("showtime").innerHTML = time;
-document.getElementById("timezone").innerHTML = timezone;
 }
 
 // checking hour to set to AM or PM
@@ -126,11 +124,92 @@ function viewbugs() {
 alert('There are currently 2 known bugs.\n\nWhen the time changes over from 11:59pm to 12:00am, the PM / AM will not change unless page is refreshed - Should be fixed\n\nwhen you close this menu be sure to click the ok instead of pressing exit or else you will not be able to type in the colour box until you refresh');
 }
 
-// finding closest public holiday
-/**
-function australia() {
+// this section will be for the timezones page
+
+var settimezoneinterval = setInterval("settimezone()", 1000);
+
+function settimezone() {
+    var dateel = new Date();
+    var utchour = dateel.getUTCHours();
+    var utcmin = dateel.getUTCMinutes();
+    var utcsec = dateel.getUTCSeconds();
+    var utcfinalhour = "";
+    var utcfinalmin = "";
+    var utc24txt = document.getElementById("utc24txt");
+    var utc12txt = document.getElementById("utc12txt");
+    var timezoneselection = document.getElementById("timezone-select").value;
+    if (timezoneselection != "None") {
+        if (timezoneselection == "UTC+01:00") {
+            utcfinalhour = utchour+1;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+02:00") {
+            utcfinalhour = utchour+2;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+03:00") {
+            utcfinalhour = utchour+3;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+03:30") {
+            utcfinalhour = utchour+3;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+04:00") {
+            utcfinalhour = utchour+4;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+04:30") {
+            utcfinalhour = utchour+4;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+05:00") {
+            utcfinalhour = utchour+5;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+05:30") {
+            utcfinalhour = utchour+5;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+06:00") {
+            utcfinalhour = utchour+6;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+06:30") {
+            utcfinalhour = utchour+6;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+07:00") {
+            utcfinalhour = utchour+7;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+08:00") {
+            utcfinalhour = utchour+8;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+09:00") {
+            utcfinalhour = utchour+9;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+09:30") {
+            utcfinalhour = utchour+9;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+10:00") {
+            utcfinalhour = utchour+10;
+            utcfinalmin = utcmin;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+10:30") {
+            utcfinalhour = utchour+10;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        }
+        if (utcfinalmin > 59.99) {
+            utcfinalmin -= 60;
+            utcfinalhour += 1;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        }
+        document.getElementById("utcnormal").innerText = finaltimeutc;
+        document.getElementById("chosentz").innerText = timezoneselection;
+    }
 }
-function southaustralia() {
-    
-}
-*/

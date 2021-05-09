@@ -184,3 +184,17 @@ body {
     background: darkgray;
     opacity: 0.7;
 }
+
+#timezone-select {
+    margin: auto;
+    padding: 12px;
+    display: block;
+}
+
+.centertext {
+    text-align: center;
+}
+
+#utc12txt {
+    display: none;
+}

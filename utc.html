@@ -19,17 +19,46 @@
 <div id="websiteblock">
 <div id="topbar">
     <a id="topbar-item" href="index.html">Local Time</a>
-    <a id="topbar-item" href="utc.html">Timezones</a>
-    <a id="topbar-item-active" href="countdown.html">Countdown</a>
+    <a id="topbar-item-active" href="utc.html">Timezones</a>
+    <a id="topbar-item" href="countdown.html">Countdown</a>
 </div>
-<h1 class="todaydate">Countdowns</h1>
-<input class="entercountdownbox" placeholder="DD" id="countdowninput-day">
-<input class="entercountdownbox" placeholder="MM" id="countdowninput-month">
-<input class="entercountdownbox" placeholder="YYYY" id="countdowninput-year">
-<input class="entercountdownbutton" type="submit" id="countdowninput" onclick="countdownsubmit()">
-<h3 class="textcenter" id="displayinput1"></h3>
-<h3 class="textcenter" id="displaydate"></h3>
+<h1 class="todaydate">Timezones</h1>
+<h1 class="todaydate"><span class="changetext" id="showdate">N/A</span></h1>
+<h1 class="todaydate" id="utc24txt"><span class="changetext" id="utcnormal">00:00:00</span></h1>
+<h1 class="todaydate" id="utc12txt"><span class="changetext" id="utc12hr">00:00:00</span></h1>
+<form id="form-timezone" onsubmit="return false;">
+    <h2 class="centertext">Choose a Timezone</h2>
+    <select id="timezone-select" oninput="settimezone()">
+        <option>None</option>
+        <option>UTC+01:00</option>
+        <option>UTC+02:00</option>
+        <option>UTC+03:00</option>
+        <option>UTC+03:30</option>
+        <option>UTC+04:00</option>
+        <option>UTC+04:30</option>
+        <option>UTC+05:00</option>
+        <option>UTC+05:30</option>
+        <option>UTC+06:00</option>
+        <option>UTC+06:30</option>
+        <option>UTC+07:00</option>
+        <option>UTC+08:00</option>
+        <option>UTC+09:00</option>
+        <option>UTC+09:30</option>
+        <option>UTC+10:00</option>
+        <option>UTC+10:30</option>
+    </select>
+</form>
+<h3 id="chosentz" class="centertext"></h3>
+<h1 class="currentselect" id="twelvehourselect">Currently Selected: <span id="twelveselectedtext">12 Hour Time</span></h1>
+<h1 class="currentselect" id="twentyfourhourselect">Currently Selected: <span id="twentyfourselectedtext">24 Hour Time</span></h1>
+<a class="togglebutton" onclick="toggle12or24()">Toggle 24 / 12 Hour Time</a>
+<br>
+<input class="colourchangeboxpicker" id="userinputpicker" type="color" oninput="choosecolourpicker()">
+<input class="colourchangebox" id="userinput" onkeyup="choosecolour()" placeholder="Hex Value or Colour Name">
+<h1></h1>
+<h2 class="textcenter">Choose colour above<br>(choose a colour from the picker, or type the hex colour or name in the box)</h2>
 <br><br>
+<a class="viewbugs" onclick="viewbugs()">View Bugs</a>
 </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
