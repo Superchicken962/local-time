@@ -133,8 +133,13 @@ function settimezone() {
     var utchour = dateel.getUTCHours();
     var utcmin = dateel.getUTCMinutes();
     var utcsec = dateel.getUTCSeconds();
+    var utcdate = dateel.getUTCDate();
+    var utcmonth = (dateel.getUTCMonth()+1);
+    var utcyear = dateel.getUTCFullYear();
+    var utcfulldate = utcdate+'/'+utcmonth+'/'+utcyear;
     var utcfinalhour = "";
     var utcfinalmin = "";
+    document.getElementById("showdateutc").innerText = utcfulldate;
     var utc24txt = document.getElementById("utc24txt");
     var utc12txt = document.getElementById("utc12txt");
     var timezoneselection = document.getElementById("timezone-select").value;
@@ -203,12 +208,23 @@ function settimezone() {
             utcfinalhour = utchour+10;
             utcfinalmin = utcmin+30;
             finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        } else if (timezoneselection == "UTC+15:30") {
+            utcfinalhour = utchour+15;
+            utcfinalmin = utcmin+30;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
         }
         if (utcfinalmin > 59.99) {
             utcfinalmin -= 60;
             utcfinalhour += 1;
             finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
         }
+        else if (utcfinalhour > 23.99) {
+            utcfinalhour -= 24;
+            utcdate += 1;
+            utcfulldate = utcdate+'/'+utcmonth+'/'+utcyear;
+            finaltimeutc = utcfinalhour+':'+utcfinalmin+':'+utcsec;
+        }
+        document.getElementById("showdateutc").innerText = utcfulldate;
         document.getElementById("utcnormal").innerText = finaltimeutc;
         document.getElementById("chosentz").innerText = timezoneselection;
     }
